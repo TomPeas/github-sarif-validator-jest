@@ -21,31 +21,31 @@ declare global {
   }
 }
 
-export function toBeValidGithubSarifLog(): GithubSarifLogMatcher {
-  return (received: MaybeSarifLog) => {
-    if (!received) {
-      return {
-        actual: received,
-        message: () => "Expected a valid SARIF log",
-        pass: false,
-      };
-    }
-
-    const ajv = new Ajv();
-    const validate = ajv.compile(githubSarifSchema);
-
-    if (!validate(received)) {
-      return {
-        actual: received,
-        message: () => ajv.errorsText(validate.errors),
-        pass: false,
-      };
-    }
-
+export function toBeValidGithubSarifLog(received: MaybeSarifLog) {
+  if (!received) {
     return {
       actual: received,
-      message: () => "Valid SARIF log",
-      pass: true,
+      message: () => "Expected a valid SARIF log",
+      pass: false,
     };
+  }
+
+  const ajv = new Ajv();
+  const validate = ajv.compile(githubSarifSchema);
+
+  if (!validate(received)) {
+    return {
+      actual: received,
+      message: () => ajv.errorsText(validate.errors),
+      pass: false,
+    };
+  }
+
+  return {
+    actual: received,
+    message: () => "Valid SARIF log",
+    pass: true,
   };
 }
+
+expect.extend({ toBeValidGithubSarifLog });
