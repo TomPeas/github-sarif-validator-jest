@@ -1,11 +1,11 @@
 {
-  "$schema": "https://json-schema.org/draft-07/schema",
-  "$id": "https://yoursite.com/schemas/sarif-github-extended-schema.json",
+  "$id": "github-sarif-schema",
   "title": "SARIF GitHub Extended Schema",
   "description": "An extension of the SARIF 2.1.0 schema to add GitHub-specific requirements.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/123e95847b13fbdd4cbe2120fa5e33355d4a042b/Schemata/sarif-schema-2.1.0.json"
+      "$ref": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json"
     }
   ],
   "properties": {

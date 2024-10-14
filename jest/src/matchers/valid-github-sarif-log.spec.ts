@@ -1,9 +1,12 @@
+import "./valid-github-sarif-log";
+
 const validSairfLog = {
   $schema: "https://yoursite.com/schemas/sarif-github-extended-schema.json",
   runs: [
     {
       tool: {
         driver: {
+          name: "Example Linter Response",
           rules: [
             {
               id: "RULE001",
@@ -40,6 +43,7 @@ const validSairfLog = {
       ],
     },
   ],
+  version: "2.1.0",
 };
 
 const invalidSairfLog = {
