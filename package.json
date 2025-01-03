@@ -14,7 +14,6 @@
     "build:js": "esbuild src/index.ts --bundle  --sourcemap --platform=node --target=node22 --format=esm --packages=external --outfile=dist/index.js",
     "build:types": "tsc --emitDeclarationOnly",
     "build": "npm run build:js && npm run build:types",
-    "prepare": "husky",
     "test": "jest --coverage"
   },
   "repository": {
