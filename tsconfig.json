@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    // Language features for our TS code:
+    "lib": ["ESNext"],
+    // Module configuration for our TS code:
+    "moduleResolution": "NodeNext", // use esm modules in our code
+    "allowImportingTsExtensions": true, // instead of ".js" everywhere
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    // Strictness settings for our TS code:
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    // Output options:
+    "module": "NodeNext",
+    "declaration": true,
+    "outDir": "dist/types",
+    "emitDeclarationOnly": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
