@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-# if '.ts' files are staged, compile and add them
-if git diff --name-only --cached | grep -E ".+.ts$"; then
-  npm run build;
-  find . -type d -exec bash -c 'cd "$1" && git add .' _ {} \; -print
-fi
