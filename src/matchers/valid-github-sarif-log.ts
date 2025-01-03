@@ -34,9 +34,11 @@ const toBeValidGithubSarifLog: MatcherFunction<[]> = (actual) => {
   };
 };
 
-expect.extend({
-  toBeValidGithubSarifLog,
-});
+export function extendJestExpect() {
+  expect.extend({
+    toBeValidGithubSarifLog,
+  });
+}
 
 declare global {
   namespace jest {
@@ -49,3 +51,11 @@ declare global {
     }
   }
 }
+
+// Automatically extend Jest's expect if used within a Jest environment
+if (typeof expect !== "undefined") {
+  extendJestExpect();
+}
+
+// Export the matcher for manual extension if needed
+export { toBeValidGithubSarifLog };
