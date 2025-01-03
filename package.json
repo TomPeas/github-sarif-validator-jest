@@ -1,5 +1,5 @@
 {
-  "name": "@tompeas/github-sarif-validator-jest",
+  "name": "github-sarif-validator-jest",
   "version": "0.0.1",
   "description": "A Jest package that allows you to validate a Sarif output is compatible for Github Code scanning",
   "main": "dist/index.js",
