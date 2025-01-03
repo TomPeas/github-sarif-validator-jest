@@ -8,6 +8,7 @@
       "$ref": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json"
     }
   ],
+  "type": "object",
   "properties": {
     "runs": {
       "type": "array",
@@ -57,6 +58,21 @@
                     },
                     "required": ["physicalLocation"]
                   }
+                },
+                "partialFingerprints": {
+                  "type": "object",
+                  "minProperties": 1,
+                  "description": "A unique identifier for the result"
+                },
+                "rule": {
+                  "type": "object",
+                  "properties": {
+                    "index": {
+                      "type": "integer",
+                      "description": "The index within the tool component rules array of the rule object associated with this result."
+                    }
+                  },
+                  "required": ["index"]
                 }
               },
               "required": ["ruleId", "message", "locations"]
